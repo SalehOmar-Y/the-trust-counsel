@@ -1,13 +1,12 @@
-// apps/api/src/index.ts
-import express from "express";
+import express from 'express';
+import router from './routes';
 
 const app = express();
-const port = process.env.PORT || 4000;
+const PORT = 4000;
 
-app.get("/", (req, res) => {
-  res.send("API is running");
-});
+app.use(express.json()); // to parse JSON request bodies
+app.use('/', router);
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server listening at http://localhost:${PORT}`);
 });
