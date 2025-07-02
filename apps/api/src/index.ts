@@ -1,12 +1,18 @@
 import express from 'express';
-import router from './routes';
+import cors from 'cors';
+
+import healthRoutes from './routes/health';
+import solicitorsRoutes from './routes/solicitors';
 
 const app = express();
-const PORT = 4000;
 
-app.use(express.json()); // to parse JSON request bodies
-app.use('/', router);
+app.use(cors()); // Enable CORS for frontend requests
+
+app.use('/health', healthRoutes);
+app.use('/solicitors', solicitorsRoutes);
+
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-  console.log(`Server listening at http://localhost:${PORT}`);
+  console.log(`Server listening on http://localhost:${PORT}`);
 });
