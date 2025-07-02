@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 17% 97%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 210 79% 46%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 70%;
+
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 215 28% 17%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 79% 46%;
+
+    /* Trust Counsel specific design tokens */
+    --trust-blue: 210 79% 46%;
+    --trust-green: 142 76% 36%;
+    --trust-warm: 25 95% 53%;
+    --trust-light: 210 40% 98%;
+    --trust-neutral: 215 16% 47%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--trust-blue)), hsl(var(--primary-glow)));
+    --gradient-trust: linear-gradient(45deg, hsl(var(--trust-blue)), hsl(var(--trust-green)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--trust-warm)), hsl(var(--accent)));
+    
+    /* Shadows */
+    --shadow-trust: 0 10px 30px -10px hsl(var(--trust-blue) / 0.2);
+    --shadow-soft: 0 4px 20px -5px hsl(var(--foreground) / 0.1);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 28% 17%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 20%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 20%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 70%;
+    --primary-foreground: 215 28% 17%;
+    --primary-glow: 210 100% 80%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 142 76% 50%;
+    --accent-foreground: 215 28% 17%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 210 100% 70%;
+
+    /* Dark mode adjustments */
+    --trust-blue: 210 100% 70%;
+    --trust-green: 142 76% 50%;
+    --trust-warm: 25 95% 60%;
+    --trust-light: 217 33% 18%;
+    --trust-neutral: 215 20% 65%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--trust-blue)), hsl(var(--primary-glow)));
+    --gradient-trust: linear-gradient(45deg, hsl(var(--trust-blue)), hsl(var(--trust-green)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--trust-warm)), hsl(var(--accent)));
+    
+    --shadow-trust: 0 10px 30px -10px hsl(var(--trust-blue) / 0.3);
+    --shadow-soft: 0 4px 20px -5px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
